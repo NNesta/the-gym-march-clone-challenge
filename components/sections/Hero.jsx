@@ -7,7 +7,7 @@ const Hero = () => {
     <Wrapper>
       <div
         id="hero"
-        className="max-w-[1166px] mx-auto px-3 grid lg:grid-cols-2 lg:grid-rows-1 gap-16 pt-[72px] pb-[86px]   mt-28 mb-16"
+        className="max-w-[1166px] mx-auto px-3 grid lg:grid-cols-2 lg:grid-rows-1 gap-16 lg:pt-[72px] lg:pb-[86px]   lg:mt-28 lg:mb-16"
       >
         <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 pt-[72px] mb-6">
           <h1 className="text-[42px] font-semibold leading[58.8px]">

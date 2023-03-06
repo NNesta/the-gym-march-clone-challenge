@@ -126,7 +126,7 @@ const Footer = () => {
             <h6>Follow UvA on social media</h6>
             <div className="flex items-center gap-4">
               {[1, 2, 3, 4, 5, 6].map((item, index) => (
-                <img src={`assets/media${item}.svg`} alt="" />
+                <img key={index} src={`assets/media${item}.svg`} alt="" />
               ))}
             </div>
           </div>
