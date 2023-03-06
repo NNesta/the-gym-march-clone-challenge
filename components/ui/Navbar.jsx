@@ -48,7 +48,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 inset-x-0 z-50 ${
           shrink ? "h-[59px" : "h-[84px]"
-        } bg-white`}
+        } bg-white duration-300 ease-in-out`}
       >
         <div className="mx-auto w-full max-w-[1400px]  lg:px-2">
           <div className="flex flex-col lg:flex-row text-3xl items-center justify-between w-full duration-300 lg:shadow-none shadow-lg">
@@ -76,7 +76,7 @@ const Navbar = () => {
                 src="/assets/logo1s.svg"
                 alt=""
               />
-              <div className="flex items-center lg:w-[400px] lg:h-[42px] lg:border-2 lg:pl-[42px] lg:pr-3 lg:p-2 border lg:border-gray-400 border-pb-900">
+              <div className="flex items-center lg:w-[400px]  lg:border-2  lg:pr-3 lg:p-2 border lg:border-gray-400 border-pb-900">
                 <input
                   className="hidden lg:flex text-[16px] flex-1 focus:outline-none"
                   type="text"
@@ -94,7 +94,11 @@ const Navbar = () => {
                 href="compare"
               >
                 <span className="hidden lg:block"> Compare programmes</span>
-                <img src="/assets/heart.svg" alt="" />
+                <img
+                  className="hover:shadow-7xl"
+                  src="/assets/heart.svg"
+                  alt=""
+                />
               </Link>
               <span className="p-2 border border-pb-900">NL</span>
               <IoMenu className="text-white block lg:hidden bg-pb-900" />
@@ -103,7 +107,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`bg-pb-100  fixed  inset-x-0 z-40 ${
+        className={`bg-pb-100   fixed  inset-x-0 z-40 ${
           shrink ? "top-[65px]" : "top-[84px]"
         } ${!show && "-translate-y-20"}`}
       >

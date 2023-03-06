@@ -4,8 +4,11 @@ import { FiChevronRight } from "react-icons/fi";
 
 const FooterCard = ({ title, links }) => {
   return (
-    <div>
-      <h1 className="leading-4 text-[16px] font-semibold mb-8">{title}</h1>
+    <div className="lg:border-none border-t border-white ">
+      <div className="flex justify-between">
+        <h1 className="leading-4 text-[16px] font-semibold mb-5">{title}</h1>
+        <img src="/assets/chevron.svg" alt="" />
+      </div>
       <ul>
         {links.map((link, index) => (
           <li key={index}>
