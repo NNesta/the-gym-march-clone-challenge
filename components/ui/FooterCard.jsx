@@ -5,7 +5,7 @@ import { FiChevronRight } from "react-icons/fi";
 const FooterCard = ({ title, links }) => {
   return (
     <div>
-      <h1 className="leading-4 text-[16px] font-semibold">{title}</h1>
+      <h1 className="leading-4 text-[16px] font-semibold mb-8">{title}</h1>
       <ul>
         {links.map((link, index) => (
           <li key={index}>

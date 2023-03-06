@@ -9,10 +9,20 @@ const Navbar = () => {
   const [shrink, setShrink] = useState(false);
   const [showNav2, setShowNav2] = useState(true);
   const [show, setShow] = useState(true);
+  const [showUp, setShowUp] = useState(true);
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    if (scroll) {
+      window.scrollTo(100, 100);
+    }
+  }, [scroll]);
   useEffect(() => {
     const onScroll = () => {
       window.scrollY >= 300 ? setShrink(true) : setShrink(false);
       window.scrollY >= 400 ? setShowNav2(true) : setShowNav2(false);
+      window.scrollY >= 1850 || window.scrollY <= 1000
+        ? setShowUp(false)
+        : setShowUp(true);
     };
     window.addEventListener("scroll", onScroll);
   }, []);
@@ -34,15 +44,18 @@ const Navbar = () => {
     };
   }, [lastScroll]);
   return (
-    <div className="">
+    <div className="w-full">
       <div
         className={`fixed top-0 inset-x-0 z-50 ${
           shrink ? "h-[59px" : "h-[84px]"
         } bg-white`}
       >
-        <div className="  mx-auto max-w-[1400px]  px-2">
-          <div className="flex flex-col lg:flex-row text-3xl items-center justify-between w-full duration-300">
-            <div className={`${shrink ? "py-[9px]" : "py-[21px] "} px-2`}>
+        <div className="mx-auto w-full max-w-[1400px]  lg:px-2">
+          <div className="flex flex-col lg:flex-row text-3xl items-center justify-between w-full duration-300 lg:shadow-none shadow-lg">
+            <Link
+              href="/"
+              className={`${shrink ? "lg:py-[9px]" : "lg:py-[21px] "} lg:px-2`}
+            >
               {!shrink ? (
                 <img
                   className="hidden lg:flex"
@@ -56,11 +69,16 @@ const Navbar = () => {
                   alt=""
                 />
               )}
-            </div>
-            <div className="flex items-center gap-4 ">
-              <div className="flex items-center py w-[400px] h-[42px] border-2 pl-[42px] pr-3">
+            </Link>
+            <div className="flex justify-between  items-center gap-4 ">
+              <img
+                className="lg:hidden flex h-[50px]"
+                src="/assets/logo1s.svg"
+                alt=""
+              />
+              <div className="flex items-center lg:w-[400px] lg:h-[42px] lg:border-2 lg:pl-[42px] lg:pr-3 lg:p-2 border lg:border-gray-400 border-pb-900">
                 <input
-                  className="hidden lg:flex text-[16px] flex-1"
+                  className="hidden lg:flex text-[16px] flex-1 focus:outline-none"
                   type="text"
                   placeholder="search..."
                   value=""
@@ -72,10 +90,10 @@ const Navbar = () => {
                 />
               </div>
               <Link
-                className="hidden lg:flex items-center font-bold gap-[5px] leading-4 px-[4.8px] text-[16px]"
+                className=" lg:flex items-center font-bold gap-[5px] leading-4 px-[4.8px] text-[16px]"
                 href="compare"
               >
-                <span> Compare programmes</span>
+                <span className="hidden lg:block"> Compare programmes</span>
                 <img src="/assets/heart.svg" alt="" />
               </Link>
               <span className="p-2 border border-pb-900">NL</span>
@@ -96,15 +114,15 @@ const Navbar = () => {
                 title: "Education",
                 link: "education",
                 data: [
-                  { title: "Bachelors", link: "bachelors" },
-                  { title: "Masters", link: "masters" },
+                  { title: "Bachelors", link: "page1" },
+                  { title: "Masters", link: "page2" },
                   {
                     title: "Professional development",
-                    link: "professional",
+                    link: "page3",
                   },
-                  { title: "Summer School", link: "summer" },
-                  { title: "Open programmes", link: "open" },
-                  { title: "Exchange", link: "exchange" },
+                  { title: "Summer School", link: "page4" },
+                  { title: "Open programmes", link: "page5" },
+                  { title: "Exchange", link: "page1" },
                 ],
               },
               {
@@ -113,16 +131,16 @@ const Navbar = () => {
                 data: [
                   {
                     title: "Research at the UvA",
-                    link: "research",
+                    link: "page1",
                   },
-                  { title: "PhD", link: "phd" },
+                  { title: "PhD", link: "page2" },
                 ],
               },
               {
                 title: "News  Events",
-                link: "news",
+                link: "page3",
                 data: [
-                  { title: "News", link: "news" },
+                  { title: "News", link: "page4" },
                   { title: "Events", link: "events" },
                   { title: "Press Office", link: "press" },
                   {
@@ -168,7 +186,9 @@ const Navbar = () => {
                 {item.data && (
                   <div className="absolute pt-3 px-5 pb-4 bg-pb-100 hidden group-hover:block w-[300px]">
                     {item.data.map((element, index) => (
-                      <div key={index}>{element.title}</div>
+                      <Link href={element.link} key={index}>
+                        {element.title}
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -176,6 +196,20 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+      </div>
+      <div className="fixed hidden lg:block -right-9 inset-y-0 my-auto w-[100px] h-8   bg-[#e6e6e6] -rotate-90  text-pb-900">
+        <div className="flex items-center w-full h-full ">
+          <img className="w-6 h-6" src="/assets/feedback.svg" alt="" />
+          <h1 className="leading-[22.4px] ">feedback</h1>
+        </div>
+      </div>
+      <div
+        onClick={() => setScroll(true)}
+        className={`py-[8.4px] fixed ${
+          showUp ? "block" : "hidden"
+        } right-16 bottom-8 border px-2 m-4 ml-4 bg-white`}
+      >
+        <img className="-rotate-90" src="/assets/chevron.svg" alt="" />
       </div>
     </div>
   );

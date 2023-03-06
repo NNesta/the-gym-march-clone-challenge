@@ -5,7 +5,10 @@ import HeroCard from "../ui/HeroCard";
 const Hero = () => {
   return (
     <Wrapper>
-      <div className="max-w-[1166px] mx-auto px-3 grid lg:grid-cols-2 lg:grid-rows-1 gap-16 pt-[72px] pb-[86px]  mt-28 mb-16">
+      <div
+        id="hero"
+        className="max-w-[1166px] mx-auto px-3 grid lg:grid-cols-2 lg:grid-rows-1 gap-16 pt-[72px] pb-[86px]   mt-28 mb-16"
+      >
         <div className="lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 pt-[72px] mb-6">
           <h1 className="text-[42px] font-semibold leading[58.8px]">
             University of Amsterdam
@@ -21,7 +24,7 @@ const Hero = () => {
             alt=""
           />
         </div>
-        <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2 z-20 self-end gap-4 flex flex-col lg:flex-row w-full lg:mb-8 -mt-32 mx-auto">
+        <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2 z-20 self-end gap-4 flex flex-col lg:flex-row w-full lg:mb-8 -mt-32 mx-auto px-6">
           {[
             {
               title: "Bachelor's",

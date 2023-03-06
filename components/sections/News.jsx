@@ -7,7 +7,7 @@ const News = () => {
   return (
     <div className="bg-[#e6e6e6] w-full h-[710px] py-16">
       <div className="flex items-center w-full max-w-[1384px] mx-auto justify-between">
-        <h1 className="text-[30px] font-semibold leading-12 px-6 flex-1">
+        <h1 className="text-[30px] font-semibold leading-12 pr-6 mb-8 flex-1">
           News
         </h1>
         <div className="flex items-center">
@@ -16,7 +16,7 @@ const News = () => {
         </div>
       </div>
       {/* <div className="w-full"> */}
-      <div className="flex gap-4 overflow-x-scroll w-full scrollbar-hide">
+      <div className="flex gap-6 overflow-x-scroll w-full scrollbar-hide px-16">
         {[
           {
             image:

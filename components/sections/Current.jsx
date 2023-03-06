@@ -4,8 +4,10 @@ import CurrentCard from "../ui/CurrentCard";
 
 const Current = () => {
   return (
-    <Wrapper>
-      <h1 className="text-[30px] font-semibold leading-12 pl-6">Current</h1>
+    <Wrapper styles="min-h-[550px]">
+      <h1 className="text-[30px] font-semibold leading-12 pr-6 mb-8">
+        Current
+      </h1>
       <div className="grid lg:grid-cols-3 gap-4">
         {[
           {

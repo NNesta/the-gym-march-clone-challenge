@@ -4,7 +4,7 @@ import GotoCard from "../ui/GotoCard";
 
 const Goto = () => {
   return (
-    <Wrapper styles="h-[386px] py-16 mb-16">
+    <Wrapper styles="min-h-[386px] py-16 mb-16">
       <div className="flex flex-col">
         <h1 className="text-[30px] font-semibold leading-12 pl-6">Go to:</h1>
         <div className="grid lg:grid-cols-3 gap-4 ">

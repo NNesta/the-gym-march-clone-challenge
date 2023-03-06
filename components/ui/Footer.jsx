@@ -21,7 +21,7 @@ const Footer = () => {
             src="/assets/logo2.svg"
             alt=""
           />
-          <div className="py-[8.4px] px-2 m-4 ml-4 bg-white">
+          <div className="py-[8.4px] hidden lg:block  px-2 m-4 ml-4 bg-white">
             <img className="-rotate-90" src="/assets/chevron.svg" alt="" />
           </div>
         </div>
@@ -105,11 +105,12 @@ const Footer = () => {
           ))}
         </div>
       </Wrapper>
+      <hr className="w-full h-[1px] bg-white my-8" />
       <Wrapper>
-        <div className="flex lg:flex-row flex-col justify-between items-center">
-          <div className="flex items-center gap-6">
+        <div className="flex lg:flex-row flex-col justify-between gap-8 items-center pb-4">
+          <div className="flex  flex-col lg:flex-row items-center gap-6 order-2 lg:order-1">
             <h6>Copyright UvA 2023</h6>
-            <ul className="flex items-center gap-8">
+            <ul className="flex  items-center gap-8">
               {[
                 { title: "About this site", link: "about" },
                 { title: "Privacy", link: "privacy" },
@@ -121,7 +122,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col lg:flex-row items-center gap-6 order-1 lg:order-2">
             <h6>Follow UvA on social media</h6>
             <div className="flex items-center gap-4">
               {[1, 2, 3, 4, 5, 6].map((item, index) => (
